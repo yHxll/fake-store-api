@@ -1,0 +1,10 @@
+<section class="aviso" *ngIf="!produtos">
+  <h1> Não há lista de produtos.</h1>
+</section>
+<section class="container" *ngIf="produtos">
+  <div class="card" *ngFor="let produto of produtos">
+    <img src="{{ produto.image }}" alt="">
+    <h1 fonte>  {{ produto.title | uppercase}} </h1>
+    <p fonte>{{ produto.price | currency: 'BRL' }}</p>
+  </div>
+</section>
